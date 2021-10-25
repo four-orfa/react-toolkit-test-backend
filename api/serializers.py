@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 def create(self, validated_data):
     user = User.objects.create_user(**validated_data)
-    return User
+    return user
 
 
 class TaskSerializer(serializers.ModelSerializer):
@@ -23,4 +23,4 @@ class TaskSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Task
-        fields = ('id', 'title', 'created_at', 'created_at')
+        fields = ('id', 'title', 'updated_at', 'created_at')
